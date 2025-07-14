@@ -4,16 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/hori.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/hori.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/hori.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/hori.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="img/hori.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Horizon Company | Bots para Discord & FiveM</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <title>Horizon Company | Bots para Discord & FiveM</title>
 </head>
 
 <body class="dark">
@@ -30,7 +25,7 @@
         </div>
 
         <nav class="nav-links">
-            <a href="#funcionalidades">Funcionalidades</a>
+            <a href=".tickets-container">Funcionalidades</a>
             <a href="#integracoes">Integrações</a>
             <a href="#precos">Preços</a>
         </nav>
@@ -38,7 +33,7 @@
         <div class="nav-buttons">
             <div class="desktop-theme-dropdown">
                 <button class="theme-toggle" aria-label="Mudar tema">
-                    <i class="fa-solid fa-moon"></i> <!-- Ícone padrão (tema escuro) -->
+                    <i class="fa-solid fa-moon"></i>
                 </button>
                 <div class="theme-options">
                     <button data-theme="dark"><i class="fa-solid fa-moon"></i> Escuro</button>
@@ -62,25 +57,78 @@
             <button class="menu-toggle" aria-label="Menu">☰</button>
         </div>
     </header>
-    <section class="container">
+
+    <section class="container fade-in">
         <div class="feature-section">
             <div class="feature-content">
                 <span class="badge">Novidade</span>
                 <h1>Crie sua <span>Cidade FiveM</span> com Eficiência com a Horizon Company</h1>
-                <p>Scripts exclusivos, bots para Discord e tudo que você precisa para criar e gerenciar seu servidor com
-                    excelência.</p>
+                <p>Scripts exclusivos, bots para Discord e tudo que você precisa para criar e gerenciar seu servidor com excelência.</p>
                 <div class="buttons">
                     <a href="#saiba-mais" class="btn btn-outline">Descobrir mais</a>
                     <a href="#comecar-agora" class="btn btn-primary">Começar agora →</a>
                 </div>
             </div>
             <div class="feature-image">
-                <!-- Substitua pelo caminho da sua imagem -->
-                <img src="img/hori.png" alt="Dashboard do PumaHelp mostrando o gerenciamento de tickets">
+                <img class="feature-logo" src="img/hori.png" alt="Dashboard...">
             </div>
         </div>
     </section>
-    <!-- Mobile Menu -->
+
+    <section class="tickets-container fade-in">
+        <div class="tickets-image">
+            <img src="img/hori.png" alt="Exemplo de painel de tickets">
+        </div>
+        <div class="tickets-content">
+            <span class="badge">FUNCIONALIDADES</span>
+            <h2>Integrações Essenciais para seu Servidor RP</h2>
+            <p class="tickets-description">
+                Tenha acesso a soluções completas como bots para Discord, login via Steam, integração com banco de dados e ferramentas para desenvolver sua cidade com eficiência.
+            </p>
+
+            <div class="tickets-grid">
+                <div class="ticket-card destaque">
+                    <i class="fa-brands fa-discord"></i>
+                    <h3>Bots para Discord</h3>
+                    <p>Automatize seu servidor com bots inteligentes, comandos personalizados e integração com seu FiveM.</p>
+                </div>
+
+                <div class="ticket-card">
+                    <i class="fa-brands fa-steam"></i>
+                    <h3>API de Login com Steam</h3>
+                    <p>Implemente login via Steam para conectar seus jogadores com segurança e praticidade ao site.</p>
+                </div>
+
+                <div class="ticket-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Conexão Site - Banco de Dados</h3>
+                    <p>Conecte seu site ao banco de dados da cidade e sincronize diamantes, usuários e permissões.</p>
+                </div>
+
+                <div class="ticket-card">
+                    <i class="fa-solid fa-code icon"></i>
+                    <h3>Desenvolvimento de Cidades</h3>
+                    <p>Criação e personalização completa da sua cidade RP com sistemas exclusivos e responsivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section section-reverse fade-in">
+        <div class="feature-image">
+            <img class="logo" src="img/hori.png" alt="Painel Admin">
+        </div>
+        <div class="feature-content">
+            <span class="badge">Organização</span>
+            <h1>Administração Descomplicada</h1>
+            <p>Gerencie permissões, players e dados do seu servidor com um painel simples, rápido e bonito.</p>
+            <div class="buttons">
+                <a href="#painel" class="btn btn-outline">Ver painel</a>
+                <a href="#comecar-agora" class="btn btn-primary">Quero isso →</a>
+            </div>
+        </div>
+    </section>
+
     <div class="mobile-menu-container">
         <nav class="mobile-nav-links">
             <a href="#funcionalidades">Funcionalidades</a>
@@ -95,6 +143,7 @@
             <button class="btn-signup">Começar agora →</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 

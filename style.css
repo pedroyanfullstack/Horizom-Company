@@ -6,13 +6,52 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* scroll personalizado */
+/* SCROLLBAR GERAL - TEMA ESCURO (padrão) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffffffaa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffffcc;
+}
+
+/* TEMA CLARO - SCROLLBAR ESCURA */
+body.light ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+
+}
+
+body.light ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+body.light ::-webkit-scrollbar-thumb:hover {
+    background-color: #000000cc;
+}
+
+
+
 body {
     /* Cor de fundo base */
     background-color: #0d0d0d;
 
     /* Gradiente vertical laranja escuro */
     background-image:
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.37), rgba(0, 0, 0, 0.9)),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.171), rgba(0, 0, 0, 0.9)),
         /* Linhas horizontais e verticais sutis (grid) */
         linear-gradient(90deg, rgba(255, 255, 255, 0.404) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.404) 1px, transparent 1px);
@@ -23,6 +62,22 @@ body {
     /* Evita repetição do gradiente central */
     background-repeat: no-repeat, repeat, repeat;
 }
+
+.feature-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Garantir que ela não some no mobile */
+@media (max-width: 768px) {
+    .feature-logo {
+        display: block !important;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 
 body.light {
     background-color: #F0F2F2;
@@ -85,14 +140,16 @@ body.light .logo {
 .logo img {
     height: 32px;
     width: auto;
-    transition: filter 0.3s;
+    transition: filter 0.3s ease;
 }
 
+/* Aplica a todas as logos no tema claro */
+body.light img.logo,
 body.light .logo img,
 body.light .logo-mobile img {
     filter: brightness(0);
-    /* Garante que ambas as logos fiquem pretas no tema claro */
 }
+
 
 /* Beta Badge */
 .beta-badge {
@@ -401,7 +458,7 @@ body.light .menu-divider {
     display: flex;
     align-items: center;
     gap: 4rem;
-    padding: 17rem 2rem 14.76rem;
+    padding: 17rem 2rem 20.3rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -424,8 +481,8 @@ body.light .menu-divider {
 
 .badge {
     display: inline-block;
-    background-color: #575859;
-    color: white;
+    background-color: #ffffff;
+    color: #575859;
     font-weight: 600;
     font-size: 0.85rem;
     padding: 0.35rem 0.8rem;
@@ -531,7 +588,7 @@ body.light .btn-outline:hover {
         order: 2;
     }
 
- .feature-section p {
+    .feature-section p {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -551,4 +608,259 @@ body.light .btn-outline:hover {
     .feature-section h1 {
         font-size: 2rem;
     }
+}
+
+#container2 {
+    background-color: #F0F2F2;
+    width: 100%;
+    height: 40rem;
+}
+
+body.light #container2 {
+    background-color: #000000;
+    width: 100%;
+    height: 40rem;
+}
+
+.section-reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 992px) {
+    .section-reverse {
+        flex-direction: column;
+    }
+}
+
+/* Seção de Tickets com fundo escuro */
+.tickets-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+    border-radius: 24px;
+    border: solid #000000;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 8rem auto;
+    flex-wrap: wrap;
+}
+
+/* Imagem da esquerda */
+.tickets-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.tickets-image img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* Conteúdo com cards */
+.tickets-content {
+    flex: 1;
+    min-width: 300px;
+    color: #fff;
+}
+
+.tickets-content h2 {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.tickets-description {
+    font-size: 1.05rem;
+    color: #ccc;
+    margin: 1rem 0 2rem;
+    max-width: 90%;
+}
+
+/* Cards em grid */
+.tickets-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cada card */
+.ticket-card {
+    border: 1px solid #2a2a2a;
+    background-color: #0d0d0d;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: border 0.3s ease, transform 0.3s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffffff;
+}
+
+.ticket-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.ticket-card p {
+    margin-top: 0.5rem;
+    color: #babdbf;
+    font-size: 0.95rem;
+}
+
+/* Ícones */
+.ticket-card .icon {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .tickets-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .tickets-content {
+        max-width: 100%;
+    }
+
+    .tickets-description {
+        max-width: 100%;
+    }
+}
+
+/* fundo claro section2 */
+
+body.light .tickets-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 8rem auto;
+    flex-wrap: wrap;
+}
+
+/* Imagem da esquerda */
+.tickets-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.tickets-image img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* Conteúdo com cards */
+.tickets-content {
+    flex: 1;
+    min-width: 300px;
+    color: #fff;
+}
+
+.tickets-content h2 {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.tickets-description {
+    font-size: 1.05rem;
+    color: #ccc;
+    margin: 1rem 0 2rem;
+    max-width: 90%;
+}
+
+/* Cards em grid */
+.tickets-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cada card */
+.ticket-card {
+    border: 1px solid #2a2a2a;
+    background-color: #575859;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: border 0.3s ease, transform 0.3s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffffff;
+}
+
+.ticket-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.ticket-card p {
+    margin-top: 0.5rem;
+    color: #babdbf;
+    font-size: 0.95rem;
+}
+
+/* Ícones */
+.ticket-card .icon {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .tickets-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .tickets-content {
+        max-width: 100%;
+    }
+
+    .tickets-description {
+        max-width: 100%;
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
