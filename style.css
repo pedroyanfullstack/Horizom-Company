@@ -458,7 +458,7 @@ body.light .menu-divider {
     display: flex;
     align-items: center;
     gap: 4rem;
-    padding: 17rem 2rem 20.3rem;
+    padding: 17rem 2rem 17rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -640,12 +640,21 @@ body.light #container2 {
     justify-content: center;
     background-color: #2a2a2a;
     border-radius: 24px;
-    border: solid #000000;
     padding: 4rem 2rem;
     max-width: 1400px;
     margin: 8rem auto;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+    .tickets-container {
+        margin-top: 0.1rem; /* ou o valor que achar melhor */
+        margin-bottom: 2rem; /* opcional */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* Imagem da esquerda */
 .tickets-image {
@@ -864,3 +873,4 @@ body.light .tickets-container {
   opacity: 1;
   transform: translateY(0);
 }
+
