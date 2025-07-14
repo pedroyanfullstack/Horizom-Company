@@ -1,0 +1,554 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    /* Cor de fundo base */
+    background-color: #0d0d0d;
+
+    /* Gradiente vertical laranja escuro */
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.37), rgba(0, 0, 0, 0.9)),
+        /* Linhas horizontais e verticais sutis (grid) */
+        linear-gradient(90deg, rgba(255, 255, 255, 0.404) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.404) 1px, transparent 1px);
+
+    /* Ajuste o espaçamento da grade conforme desejar */
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+
+    /* Evita repetição do gradiente central */
+    background-repeat: no-repeat, repeat, repeat;
+}
+
+body.light {
+    background-color: #F0F2F2;
+    color: #0D0D0D;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.363), rgba(240, 242, 242, 0.9)),
+        /* Linhas pretas no tema claro */
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+}
+
+/* NavBar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(13, 13, 13, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2A2A2A;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.light .navbar {
+    background-color: rgba(240, 242, 242, 0.9);
+    border-bottom: 1px solid #BABDBF;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #F0F2F2;
+    white-space: nowrap;
+}
+
+.logo-mobile {
+    display: none;
+    align-items: center;
+}
+
+body.light .logo {
+    color: #0D0D0D;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+    transition: filter 0.3s;
+}
+
+body.light .logo img,
+body.light .logo-mobile img {
+    filter: brightness(0);
+    /* Garante que ambas as logos fiquem pretas no tema claro */
+}
+
+/* Beta Badge */
+.beta-badge {
+    background-color: #575859;
+    color: #F0F2F2;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+body.light .beta-badge {
+    background-color: #BABDBF;
+    color: #0D0D0D;
+}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Theme Switcher */
+.theme-dropdown {
+    position: relative;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #BABDBF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+body.light .theme-toggle {
+    color: #575859;
+}
+
+.theme-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #262626;
+    border: 1px solid #575859;
+    border-radius: 6px;
+    min-width: 120px;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+body.light .theme-options {
+    background-color: #F0F2F2;
+    border-color: #BABDBF;
+}
+
+.theme-options.show {
+    display: block;
+}
+
+.theme-options button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #F0F2F2;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+body.light .theme-options button {
+    color: #0D0D0D;
+}
+
+.theme-options button:hover {
+    background-color: #575859;
+}
+
+body.light .theme-options button:hover {
+    background-color: #BABDBF;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #F0F2F2;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: transform 0.3s;
+}
+
+body.light .menu-toggle {
+    color: #0D0D0D;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #BABDBF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+body.light .nav-links a {
+    color: #575859;
+}
+
+.nav-links a:hover {
+    color: #F0F2F2;
+}
+
+body.light .nav-links a:hover {
+    color: #0D0D0D;
+}
+
+/* Action Buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid #575859;
+    color: #F0F2F2;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+body.light .btn-login {
+    border-color: #BABDBF;
+    color: #0D0D0D;
+}
+
+.btn-login:hover {
+    background: rgba(87, 88, 89, 0.2);
+}
+
+body.light .btn-login:hover {
+    background: rgba(186, 189, 191, 0.2);
+}
+
+.btn-signup {
+    background: #BABDBF;
+    border: none;
+    color: #0D0D0D;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+body.light .btn-signup {
+    background: #575859;
+    color: #F0F2F2;
+}
+
+.btn-signup:hover {
+    background: #F0F2F2;
+}
+
+body.light .btn-signup:hover {
+    background: #262626;
+}
+
+/* Mobile Menu */
+.mobile-menu-container {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.light .mobile-menu-container {
+    background-color: rgba(240, 242, 242, 0.95);
+}
+
+.mobile-menu-container.active {
+    transform: translateY(0);
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.mobile-nav-links a {
+    color: #BABDBF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+body.light .mobile-nav-links a {
+    color: #575859;
+}
+
+.mobile-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+}
+
+.menu-divider {
+    width: 80%;
+    height: 1px;
+    background-color: #575859;
+    margin: 1rem auto;
+    border: none;
+}
+
+body.light .menu-divider {
+    background-color: #BABDBF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: flex;
+    }
+
+    .logo-mobile img {
+        height: 30px;
+    }
+
+    .beta-badge {
+        display: none;
+    }
+
+    .nav-links,
+    .nav-buttons {
+        display: none;
+    }
+
+    .desktop-theme-dropdown {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .mobile-controls,
+    .mobile-menu-container {
+        display: none;
+    }
+}
+
+/* NOVA SEÇÃO - PumaHelp */
+.feature-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 17rem 2rem 14.76rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #575859;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.feature-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #F0F2F2;
+}
+
+body.light .feature-section h1 {
+    color: #000000;
+}
+
+.feature-section p {
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+body.light .feature-section h1 span {
+    color: #575859;
+}
+
+body.light .feature-section p {
+    color: #000000;
+}
+
+.feature-section p {
+    color: #ffffff;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    border: 2px solid #ffffff;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+body.light .btn-outline {
+    border: 2px solid #575859;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #575859;
+    border-color: #575859;
+    color: white;
+}
+
+body.light .btn-outline:hover {
+    background-color: #575859;
+    border-color: #575859;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #575859;
+    color: white;
+    border: 2px solid #575859;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: white;
+    color: #0D0D0D;
+}
+
+@media (max-width: 992px) {
+    .feature-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 6rem;
+    }
+
+    .feature-content {
+        order: 1;
+        text-align: center;
+    }
+
+    .feature-image {
+        order: 2;
+    }
+
+ .feature-section p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .feature-section h1 {
+        font-size: 2rem;
+    }
+}
