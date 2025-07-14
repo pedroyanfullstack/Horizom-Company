@@ -648,7 +648,7 @@ body.light #container2 {
 
 @media (max-width: 768px) {
     .tickets-container {
-        margin-top: 0.1rem; /* ou o valor que achar melhor */
+        margin-top: -6rem; /* ou o valor que achar melhor */
         margin-bottom: 2rem; /* opcional */
         margin-left: auto;
         margin-right: auto;
