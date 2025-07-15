@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registrar</title>
-  <link rel="stylesheet" href="sing.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar</title>
+    <link rel="stylesheet" href="sing.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo-side">
-      <img src="img/hori.png" alt="Sua Logo" />
+    <div class="container">
+        <div class="logo-side">
+            <img src="img/hori.png" alt="Sua Logo" />
+        </div>
+        <div class="form-side">
+            <h1>Registrar</h1>
+            <p>Já possui uma conta? <a href="login.html">Entre agora!</a></p>
+            <form>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required />
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required />
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required />
+                <div class="form-links">
+                    <a href="index.html" class="back-link">← Voltar para Home</a>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
     </div>
-    <div class="form-side">
-      <h1>Registrar</h1>
-      <p>Já possui uma conta? <a href="login.html">Entre agora!</a></p>
-      <form>
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Digite seu nome" required />
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail" required />
-
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Digite sua senha" required />
-
-        <button type="submit">Registrar</button>
-      </form>
-    </div>
-  </div>
 </body>
+
 </html>
